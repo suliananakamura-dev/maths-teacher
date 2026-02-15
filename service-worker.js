@@ -3,11 +3,11 @@ self.addEventListener('install', event => {
   self.skipWaiting();
   event.waitUntil(
     caches.open('mm-static-v1').then(cache => cache.addAll([
-      '/',
-      '/index.html',
-      '/manifest.webmanifest',
-      '/icons/icon-192.png',
-      '/icons/icon-512.png'
+      './',
+      'index.html',
+      'manifest.webmanifest',
+      'icons/icon-192.png',
+      'icons/icon-512.png'
     ]))
   );
 });
@@ -27,6 +27,6 @@ self.addEventListener('fetch', event => {
         caches.open('mm-static-v1').then(cache => cache.put(req, copy));
       }
       return resp;
-    }).catch(() => caches.match('/index.html')))
+    }).catch(() => caches.match('index.html')))
   );
 });

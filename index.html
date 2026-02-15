@@ -1,15 +1,34 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Marvelous Multiplier</title>
-<link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#1669c1">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-</head><body><h1>Marvelous Multiplier</h1><p>App content failed to load in this build. Please regenerate.</p>
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/service-worker.js').catch(console.error);
-  });
-}
-</script>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Marvelous Multiplier</title>
+  <!-- PWA essentials -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1669c1"/>
+  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:24px;max-width:860px}
+    code{background:#f6f8fa;padding:2px 6px;border-radius:4px}
+    .hint{background:#eef6ff;border:1px solid #cfe3ff;padding:12px;border-radius:8px}
+  </style>
+</head>
+<body>
+  <h1>Marvelous Multiplier</h1>
+  <p class="hint"><strong>Paste your page’s HTML here:</strong> replace this message with the contents of your local file
+    <code>marvelous_multiplier_formatting_fix_full.html</code>. If your page references images, scripts, or audio,
+    create an <code>assets/</code> folder in this repo and update the paths to be <em>relative</em> (e.g., <code>assets/image.png</code>).</p>
+
+  <script>
+    // Register service worker for PWA install/offline if supported
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function(){
+        navigator.serviceWorker.register('service-worker.js').catch(console.error);
+      });
+    }
+  </script>
+</body>
+</html>
